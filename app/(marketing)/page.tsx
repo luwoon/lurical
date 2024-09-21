@@ -22,12 +22,12 @@ export default function Home() {
           <ClerkLoaded>
             <SignedOut>
               <SignUpButton mode="modal" afterSignInUrl="/learn" afterSignUpUrl="/learn">
-                <Button size="lg" variant="secondary" className="w-full">
+                <Button size="lg" variant="purple" className="w-full">
                   Get Started
                 </Button>
               </SignUpButton>
               <SignInButton mode="modal" afterSignInUrl="/learn" afterSignUpUrl="/learn">
-                <Button size="lg" variant="primaryOutline" className="w-full">
+                <Button size="lg" variant="purpleOutline" className="w-full">
                   I already have an account
                 </Button>
               </SignInButton>

@@ -33,12 +33,15 @@ const buttonVariants = cva(
           "bg-[#7AD4D5]/15 text-[#7AD4D5] border-[#7AD4D5] border-2 hover:bg-[#7AD4D5]/20 transition-none",
         purple:
           "bg-[#B788D2] text-primary-foreground hover:bg-[#B788D2]/90 border-[#9c74b3] border-b-4 active:border-b-0",
+        purpleOutline:
+          "bg-white text-[#B788D2] hover:bg-bg-slate-100",
         blush:
           "bg-[#ea867b] text-primary-foreground hover:bg-[#ea867b]/90 border-[#d17a71] border-b-4 active:border-b-0",
+        blushOutline: "bg-white text-[#ea867b] hover:bg-slate-100",
         yellow:
           "bg-[#fedc7f] text-primary-foreground hover:bg-[#fedc7f]/90 border-[#fedc7f] border-b-4 active:border-b-0",
         green:
-          "bg-[#b0f498] text-primary-foreground hover:bg-[#b0f498]/90 border-[#b0f498] border-b-4 active:border-b-0",
+          "bg-[#9dd887] text-primary-foreground hover:bg-[#9dd887]/90 border-[#8ec27a] border-b-4 active:border-b-0",
         blue: "bg-[#7ad4d5] text-primary-foreground hover:bg-[#7ad4d5]/90 border-[#7ad4d5] border-b-4 active:border-b-0",
       },
       size: {

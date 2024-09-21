@@ -92,7 +92,7 @@ const main = async () => {
       {
         id: 1,
         challengeId: 1,
-        imageSrc: "/cmaj.svg",
+        imageSrc: "/cmaj.png",
         correct: true,
         text: "Zero",
         audioSrc: "/cmaj.mp3",
@@ -104,6 +104,14 @@ const main = async () => {
         correct: false,
         text: "One sharp",
         audioSrc: "/gmaj.mp3",
+      },
+      {
+        id: 3,
+        challengeId: 1,
+        imageSrc: "/fmaj.png",
+        correct: false,
+        text: "One flat",
+        audioSrc: "/fmaj.mp3",
       },
     ]);
 
