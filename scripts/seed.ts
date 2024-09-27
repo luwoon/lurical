@@ -56,13 +56,13 @@ const main = async () => {
         id: 1,
         unitId: 1,
         order: 1,
-        title: "c Major",
+        title: "c, G, D, and F Major",
       },
       {
         id: 2,
         unitId: 1,
         order: 2,
-        title: "G Major",
+        title: "A, Bb, and Eb Major; A, E, and D minor",
       },
       {
         id: 3,
@@ -85,6 +85,51 @@ const main = async () => {
         type: "SELECT",
         order: 1,
         question: "How many accidentals are there in C Major?",
+      },
+      {
+        id: 2,
+        lessonId: 1,
+        type: "ASSIST",
+        order: 2,
+        question: "Select the accidentals belonging to F Major.",
+      },
+      {
+        id: 3,
+        lessonId: 1,
+        type: "SELECT",
+        order: 3,
+        question: "How many accidentals are there in G Major?",
+      },
+      {
+        id: 4,
+        lessonId: 1,
+        type: "ASSIST",
+        order: 4,
+        question: "Select the accidentals belonging to D Major.",
+      },
+    ]);
+
+    await db.insert(schema.challenges).values([
+      {
+        id: 5,
+        lessonId: 2,
+        type: "SELECT",
+        order: 5,
+        question: "How many accidentals are there in A Major?",
+      },
+      {
+        id: 6,
+        lessonId: 2,
+        type: "ASSIST",
+        order: 6,
+        question: "Select the accidentals belonging to Bb Major.",
+      },
+      {
+        id: 7,
+        lessonId: 2,
+        type: "SELECT",
+        order: 7,
+        question: "How many accidentals are there in Eb Major?",
       },
     ]);
 
@@ -111,6 +156,102 @@ const main = async () => {
         imageSrc: "/fmaj.png",
         correct: false,
         text: "One flat",
+        audioSrc: "/fmaj.mp3",
+      },
+    ]);
+
+    await db.insert(schema.challengeOptions).values([
+      {
+        id: 4,
+        challengeId: 2,
+        correct: false,
+        text: "None",
+        audioSrc: "/cmaj.mp3",
+      },
+      {
+        id: 5,
+        challengeId: 2,
+        correct: false,
+        text: "Bb, Eb",
+        audioSrc: "/gmaj.mp3",
+      },
+      {
+        id: 6,
+        challengeId: 2,
+        correct: true,
+        text: "Bb",
+        audioSrc: "/fmaj.mp3",
+      },
+    ]);
+
+    await db.insert(schema.challengeOptions).values([
+      {
+        id: 7,
+        challengeId: 3,
+        correct: false,
+        text: "Zero",
+        audioSrc: "/cmaj.mp3",
+      },
+      {
+        id: 8,
+        challengeId: 3,
+        correct: true,
+        text: "One sharp",
+        audioSrc: "/gmaj.mp3",
+      },
+      {
+        id: 9,
+        challengeId: 3,
+        correct: false,
+        text: "One flat",
+        audioSrc: "/fmaj.mp3",
+      },
+    ]);
+
+    await db.insert(schema.challengeOptions).values([
+      {
+        id: 10,
+        challengeId: 4,
+        correct: false,
+        text: "One sharp",
+        audioSrc: "/cmaj.mp3",
+      },
+      {
+        id: 11,
+        challengeId: 4,
+        correct: true,
+        text: "Two sharps",
+        audioSrc: "/gmaj.mp3",
+      },
+      {
+        id: 12,
+        challengeId: 4,
+        correct: false,
+        text: "One flat",
+        audioSrc: "/fmaj.mp3",
+      },
+    ]);
+
+    await db.insert(schema.challengeOptions).values([
+      {
+        id: 13,
+        challengeId: 5,
+        correct: false,
+        text: "One sharp",
+        audioSrc: "/cmaj.mp3",
+      },
+      {
+        id: 14,
+        challengeId: 5,
+        correct: true,
+        text: "Three sharps",
+        audioSrc: "/gmaj.mp3",
+      },
+      {
+        id: 15,
+        challengeId: 5,
+        correct: false,
+        text: "Two flats",
         audioSrc: "/fmaj.mp3",
       },
     ]);
