@@ -3,7 +3,7 @@ import { StickyWrapper } from "@/components/sticker-wrapper";
 import { Header } from "./header";
 import { UserProgress } from "@/components/user-progress";
 import { redirect } from "next/navigation";
-import { getCourseProgress, getLessonPercentage, getUnits, getUserProgress } from "@/db/queries";
+import { getCourseProgress, getLessonPercentage, getUnits, getUserProgress, getUserSubscription } from "@/db/queries";
 import { Unit } from "./unit";
 import { lessons, units as unitsSchema } from "@/db/schema";
 
@@ -12,17 +12,20 @@ const LearnPage = async () => {
   const courseProgressData = getCourseProgress();
   const lessonPercentageData = getLessonPercentage();
   const unitsData = getUnits();
+  const userSubscriptionData = getUserSubscription();
 
   const [
     userProgress,
     units,
     courseProgress,
     lessonPercentage,
+    userSubscription,
   ] = await Promise.all([
     userProgressData,
     unitsData,
     courseProgressData,
     lessonPercentageData,
+    userSubscriptionData,
   ]);
 
   if (!userProgress || !userProgress.activeCourse) {
@@ -40,11 +43,11 @@ const LearnPage = async () => {
           activeCourse={userProgress.activeCourse}
           hearts={userProgress.hearts}
           points={userProgress.points}
-          hasActiveSubscription={false}
+          hasActiveSubscription={!!userSubscription?.isActive}
         />
       </StickyWrapper>
       <FeedWrapper>
-        <Header title={userProgress.activeCourse.title}/>
+        <Header title={userProgress.activeCourse.title} />
         {units.map((unit) => (
           <div key={unit.id} className="mb-10">
             <Unit
@@ -53,9 +56,13 @@ const LearnPage = async () => {
               description={unit.description}
               title={unit.title}
               lessons={unit.lessons}
-              activeLesson={courseProgress.activeLesson as typeof lessons.$inferSelect & {
-                unit: typeof unitsSchema.$inferSelect;  
-              } | undefined}
+              activeLesson={
+                courseProgress.activeLesson as
+                  | (typeof lessons.$inferSelect & {
+                      unit: typeof unitsSchema.$inferSelect;
+                    })
+                  | undefined
+              }
               activeLessonPercentage={lessonPercentage}
             />
           </div>
