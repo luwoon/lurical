@@ -1,33 +1,13 @@
 import { FeedWrapper } from "@/components/feed-wrapper";
+import { Promo } from "@/components/promo";
 import { StickyWrapper } from "@/components/sticker-wrapper";
 import { Progress } from "@/components/ui/progress";
+import { Quests } from "@/components/ui/quests";
 import { UserProgress } from "@/components/user-progress";
 import { getUserProgress, getUserSubscription } from "@/db/queries";
 import Image from "next/image";
 import { redirect } from "next/navigation";
-
-const quests = [
-  {
-    title: "Earn 20 XP",
-    value: 20,
-  },
-  {
-    title: "Earn 50 XP",
-    value: 50,
-  },
-  {
-    title: "Earn 100 XP",
-    value: 100,
-  },
-  {
-    title: "Earn 50 XP",
-    value: 500,
-  },
-  {
-    title: "Earn 1000 XP",
-    value: 1000,
-  },
-];
+import { quests } from "@/constants";
 
 const QuestPage = async () => {
   const userProgressData = getUserProgress();
@@ -50,21 +30,17 @@ const QuestPage = async () => {
   return (
     <div className="flex flex-row-reverse gap-[48px] px-6">
       <StickyWrapper>
-        <UserProgress 
+        <UserProgress
           activeCourse={userProgress.activeCourse}
           hearts={userProgress.hearts}
           points={userProgress.points}
           hasActiveSubscription={isPro}
         />
+        {!isPro && <Promo />}
       </StickyWrapper>
       <FeedWrapper>
         <div className="w-full flex flex-col items-center">
-          <Image 
-            src="/quest.svg"
-            alt="Quest"
-            height={90}
-            width={90}
-          />
+          <Image src="/quest.svg" alt="Quest" height={90} width={90} />
           <h1 className="text-center font-bold text-neutral-800 text-2xl my-6">
             Quests
           </h1>
@@ -80,7 +56,7 @@ const QuestPage = async () => {
                   className="flex items-center w-full p-4 gap-x-4 border-t-2"
                   key={quest.title}
                 >
-                  <Image 
+                  <Image
                     src="/points.svg"
                     alt="Points"
                     height={60}
@@ -93,7 +69,7 @@ const QuestPage = async () => {
                     <Progress value={progress} className="h-3" />
                   </div>
                 </div>
-              )
+              );
             })}
           </ul>
         </div>

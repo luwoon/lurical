@@ -45,96 +45,126 @@ const main = async () => {
     await db.insert(schema.units).values([
       {
         id: 1,
-        courseId: 1,
+        courseId: 1, // Key Signatures
         title: "Unit 1",
         description: "Grade 1 Key Signatures",
         order: 1,
-      }
+      },
+      {
+        id: 2,
+        courseId: 1, // Key Signatures
+        title: "Unit 2",
+        description: "Grade 2 Key Signatures",
+        order: 2,
+      },
+      {
+        id: 3,
+        courseId: 1, // Key Signatures
+        title: "Unit 3",
+        description: "Grade 3 Key Signatures",
+        order: 3,
+      },
+      {
+        id: 4,
+        courseId: 1, // Key Signatures
+        title: "Unit 4",
+        description: "Grade 4 Key Signatures",
+        order: 4,
+      },
+      {
+        id: 5,
+        courseId: 1, // Key Signatures
+        title: "Unit 5",
+        description: "Grade 5 Key Signatures",
+        order: 5,
+      },
     ]);
 
     await db.insert(schema.lessons).values([
       {
         id: 1,
-        unitId: 1,
+        unitId: 1, // Grade 1 Key Signatures
         order: 1,
-        title: "c, G, D, and F Major",
+        title: "c and F Major",
       },
       {
         id: 2,
-        unitId: 1,
+        unitId: 1, // Grade 1 Key Signatures
         order: 2,
-        title: "A, Bb, and Eb Major; A, E, and D minor",
+        title: "G and D Major",
       },
       {
         id: 3,
-        unitId: 1,
+        unitId: 1, // Grade 1 Key Signatures
         order: 3,
-        title: "F Major",
-      },
-      {
-        id: 4,
-        unitId: 1,
-        order: 4,
-        title: "D Major",
+        title: "c, F, G, and D Major",
       },
     ]);
 
     await db.insert(schema.challenges).values([
       {
         id: 1,
-        lessonId: 1,
+        lessonId: 1, // C and F Major
         type: "SELECT",
         order: 1,
         question: "How many accidentals are there in C Major?",
       },
       {
         id: 2,
-        lessonId: 1,
+        lessonId: 1, // C and F Major
         type: "ASSIST",
         order: 2,
         question: "Select the accidentals belonging to F Major.",
       },
       {
         id: 3,
-        lessonId: 1,
-        type: "SELECT",
+        lessonId: 1, // C and F Major
+        type: "ASSIST",
         order: 3,
-        question: "How many accidentals are there in G Major?",
+        question: "Select the accidentals belonging to C Major.",
       },
       {
         id: 4,
-        lessonId: 1,
-        type: "ASSIST",
+        lessonId: 1, // C and F Major
+        type: "SELECT",
         order: 4,
-        question: "Select the accidentals belonging to D Major.",
-      },
+        question: "How many accidentals are there in F Major?",
+      }
     ]);
 
     await db.insert(schema.challenges).values([
       {
         id: 5,
-        lessonId: 2,
+        lessonId: 2, // G and D Major
         type: "SELECT",
         order: 5,
-        question: "How many accidentals are there in A Major?",
+        question: "How many accidentals are there in G Major?",
       },
       {
         id: 6,
-        lessonId: 2,
+        lessonId: 2, // G and D Major
         type: "ASSIST",
         order: 6,
-        question: "Select the accidentals belonging to Bb Major.",
+        question: "Select the accidentals belonging to D Major.",
       },
       {
         id: 7,
-        lessonId: 2,
+        lessonId: 2, // G and D Major
         type: "SELECT",
         order: 7,
-        question: "How many accidentals are there in Eb Major?",
+        question: "How many accidentals are there in D Major?",
+      },
+      {
+        id: 8,
+        lessonId: 2,
+        type: "ASSIST", // G and D Major
+        order: 8,
+        question: "Select the accidentals belonging to D Major.",
       },
     ]);
 
     await db.insert(schema.challengeOptions).values([
+      // How many accidentals are there in C Major?
       {
         id: 1,
         challengeId: 1,
@@ -162,6 +192,7 @@ const main = async () => {
     ]);
 
     await db.insert(schema.challengeOptions).values([
+      // Select the accidentals belonging to F Major.
       {
         id: 4,
         challengeId: 2,
@@ -186,17 +217,18 @@ const main = async () => {
     ]);
 
     await db.insert(schema.challengeOptions).values([
+      // Select the accidentals belonging to C Major.
       {
         id: 7,
         challengeId: 3,
-        correct: false,
+        correct: true,
         text: "Zero",
         audioSrc: "/cmaj.mp3",
       },
       {
         id: 8,
         challengeId: 3,
-        correct: true,
+        correct: false,
         text: "One sharp",
         audioSrc: "/gmaj.mp3",
       },
@@ -210,6 +242,7 @@ const main = async () => {
     ]);
 
     await db.insert(schema.challengeOptions).values([
+      // How many accidentals are there in F Major?
       {
         id: 10,
         challengeId: 4,
@@ -220,31 +253,32 @@ const main = async () => {
       {
         id: 11,
         challengeId: 4,
-        correct: true,
+        correct: false,
         text: "Two sharps",
         audioSrc: "/gmaj.mp3",
       },
       {
         id: 12,
         challengeId: 4,
-        correct: false,
+        correct: true,
         text: "One flat",
         audioSrc: "/fmaj.mp3",
       },
     ]);
 
     await db.insert(schema.challengeOptions).values([
+      // How many accidentals are there in G Major?
       {
         id: 13,
         challengeId: 5,
-        correct: false,
+        correct: true,
         text: "One sharp",
         audioSrc: "/cmaj.mp3",
       },
       {
         id: 14,
         challengeId: 5,
-        correct: true,
+        correct: false,
         text: "Three sharps",
         audioSrc: "/gmaj.mp3",
       },
