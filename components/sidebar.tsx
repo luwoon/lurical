@@ -18,11 +18,11 @@ export const Sidebar = ({ className }: Props) => {
       )}
     >
       <Link href="/learn">
-        <div className="pt-8 pl-4 pb-7 flex items-center gap-x-3">
-          <Image src="/song.svg" height={40} width={40} alt="Logo" />
-          <h1 className="text-2xl font-extrabold text-[#EA867B] tracking-wide">
+        <div className="pt-5 pl-4 pb-2 flex items-center gap-x-3">
+          <Image src="/lurical.png" height={100} width={100} alt="Logo" />
+          {/* <h1 className="text-2xl font-extrabold text-[#EA867B] tracking-wide">
             Lurical
-          </h1>
+          </h1> */}
         </div>
       </Link>
       <div className="flex flex-col gap-y-2 flex-1">

@@ -30,19 +30,24 @@ const buttonVariants = cva(
         sidebar:
           "bg-transparent text-slate-500 border-2 border-transparent hover:bg-slate-100 transition-none",
         sidebarOutline:
-          "bg-[#7AD4D5]/15 text-[#7AD4D5] border-[#7AD4D5] border-2 hover:bg-[#7AD4D5]/20 transition-none",
-        purple:
-          "bg-[#B788D2] text-primary-foreground hover:bg-[#B788D2]/90 border-[#9c74b3] border-b-4 active:border-b-0",
-        purpleOutline: "bg-white text-[#B788D2] hover:bg-slate-100",
-        blush:
-          "bg-[#ea867b] text-primary-foreground hover:bg-[#ea867b]/90 border-[#d17a71] border-b-4 active:border-b-0",
-        blushOutline: "bg-white text-[#ea867b] hover:bg-slate-100",
-        yellow:
-          "bg-[#fedc7f] text-primary-foreground hover:bg-[#fedc7f]/90 border-[#fedc7f] border-b-4 active:border-b-0",
+          "bg-[#5B9984]/15 text-[#5B9984] border-[#5B9984]/60 border-2 hover:bg-[#5B9984]/20 transition-none",
+
         green:
-          "bg-[#9dd887] text-primary-foreground hover:bg-[#9dd887]/90 border-[#8ec27a] border-b-4 active:border-b-0",
-        blue: "bg-[#7ad4d5] text-primary-foreground hover:bg-[#7ad4d5]/90 border-[#7ad4d5] border-b-4 active:border-b-0",
-        blueOutline: "bg-white text-[#7ad4d5] hover:bg-slate-100",
+          "bg-[#366640] text-primary-foreground hover:bg-[#366640]/90 border-[#294d30] border-b-4 active:border-b-0",
+        greenOutline: "bg-white text-[#366640] hover:bg-slate-100",
+        khaki:
+          "bg-[#A58842] text-primary-foreground hover:bg-[#A58842]/90 border-[#856d35] border-b-4 active:border-b-0",
+        khakiOutline: "bg-white text-[#A58842] hover:bg-slate-100",
+        blue: "bg-[#5B9984] text-primary-foreground hover:bg-[#5B9984]/90 border-[#4d8075] border-b-4 active:border-b-0",
+        blueOutline: "bg-white text-[#5B9984] hover:bg-slate-100",
+        yellow:
+          "bg-[#F7AE2E] text-primary-foreground hover:bg-[#F7AE2E]/90 border-[#db9a27] border-b-4 active:border-b-0",
+        yellowOutline: "bg-white text-[#F7AE2E] hover:bg-slate-100",
+        orange:
+          "bg-[#ED6B27] text-primary-foreground hover:bg-[#ED6B27]/90 border-[#cf5d21] border-b-4 active:border-b-0",
+        orangeOutline: "bg-white text-[#ED6B27] hover:bg-slate-100",
+        red: "bg-[#C83C23] text-primary-foreground hover:bg-[#C83C23]/90 border-[#ad331d] border-b-4 active:border-b-0",
+        redOutline: "bg-white text-[#C83C23] hover:bg-slate-100",
       },
       size: {
         default: "h-11 px-4 py-2",

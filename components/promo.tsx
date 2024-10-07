@@ -12,7 +12,7 @@ export const Promo = () => {
         </div>
         <p className="text-muted-foreground">Get unlimited hearts and more!</p>
       </div>
-      <Button asChild variant="purple" className="w-full" size="lg">
+      <Button asChild variant="khaki" className="w-full" size="lg">
         <Link href="/shop">Upgrade today</Link>
       </Button>
     </div>
