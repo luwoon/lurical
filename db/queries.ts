@@ -12,6 +12,7 @@ export const getUserProgress = cache(async () => {
   }
 
   const data = await db.query.userProgress.findFirst({
+    // await ensures that the function waits for the database query to complete before proceeding
     where: eq(userProgress.userId, userId),
     with: {
       activeCourse: true,

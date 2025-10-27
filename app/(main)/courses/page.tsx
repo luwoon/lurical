@@ -5,10 +5,8 @@ const CoursesPage = async () => {
   const coursesData = getCourses();
   const userProgressData = getUserProgress();
 
-  const [
-    courses,
-    userProgress,
-  ] = await Promise.all([
+  const [courses, userProgress] = await Promise.all([
+    // Promise.all allows you to run multiple asynchronous operations concurrently. This is more efficient than awaiting each promise one by one.
     coursesData,
     userProgressData,
   ]);
