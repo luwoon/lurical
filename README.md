@@ -1,4 +1,13 @@
-This is a web app in progress, which gamifies learning. 
+# Lurical Music Theory App
 
-It is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Tools used: Next.js, React, Drizzle, Stripe
 
+Lurical is a Next.js project bootstrapped with create-next-app. Inspired by the language-learning app Duolingo, I had an idea to create a gamified experience for learning music theory.
+
+Explore the app [here](https://lurical.vercel.app/).
+
+![Login page](lurical1.png)
+![Courses page](lurical2.png)
+![Course page](lurical.png)
+![Question page](lurical3.png)
+![Shop page](lurical4.png)
